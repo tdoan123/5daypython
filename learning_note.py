@@ -192,6 +192,9 @@ i = 0
 while i < len(schools): 
     print(schools[i])
     i += 1
+# need to think of some more sample for while loop 
+
+#search for further exercise 
 
     
     
