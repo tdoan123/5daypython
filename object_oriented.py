@@ -204,12 +204,16 @@ account2 = BankAccount()
 # Add transactions to each account
 # Account 1
 account1.deposit(100.0)
-account1.withdraw(25.0)
+account1.withdraw(35.0)
 account1.deposit(50.0)
-account1.withdraw(10.0)
+account1.withdraw(5.0)
+account1.withdraw(5.0)
+account1.withdraw(5.0)
+account1.withdraw(5.0)
+account1.withdraw(200.0)
 
 # Account 2
-account2.deposit(200.0)
+account2.deposit(100.0)
 account2.withdraw(50.0)
 account2.deposit(100.0)
 account2.withdraw(30.0)
