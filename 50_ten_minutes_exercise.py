@@ -15,6 +15,7 @@ import random
 
 def guessing_name():
     answer = random.randint(0,100)
+    print (answer)
     
     while True: 
         user_guess = int(input('what is your guess? ' ))
@@ -30,5 +31,7 @@ def guessing_name():
             print(f'Your guess of {user_guess} is higher than the answer')
 
 guessing_name()
+
+### today, try different scenarios 1) guess words, 2) providing hint for user response thus they can do better guess 
 
 
