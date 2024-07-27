@@ -251,8 +251,60 @@ function to calculate the average
     4) convert the calculation back to the format 
     
 fucntion to return the answer to the users:  
-  
-        
-
-# ignore the user input formatting at the momment 
 '''
+
+def get_run_info (): 
+    while True: 
+        try:
+            run_info = int(input("input number of run you had: "))
+            if run_info < 0: 
+                raise ValueError("It cannt be right! # of running cannt be negative")
+            return run_info
+        except ValueError as e:
+            raise ValueError(f'Invalid input: {e}. Please enter a valid number.')
+
+def get_run_stats (run_info):
+    run_stats_combined = [] 
+    for i in range(run_info):
+        while True:
+            try:  
+                get_run_stats = input(f'what is your record for the {i + 1} run in (hh:mm:ss)?')
+                h, m, s = map(int, get_run_stats.split(":"))
+                if h < 0 or m < 0 or s <0:  
+                    raise ValueError("It cannt be right! your running time cannt be negative")
+                if m > 60 or s >60: 
+                    raise ValueError("your minutes or seconds cannt be larger than 60")
+                run_stats_combined.append(get_run_stats)
+                break 
+            except ValueError as e:
+                raise ValueError(f'Invalid input: {e}. Please enter valid format.')
+    return run_stats_combined              
+            
+def time_to_second (time_str):
+    h, m, s = map(int, time_str.split(':'))
+    return h*3600 + m*60 + s 
+
+def second_to_time (seconds):
+    h = seconds // 3600 
+    seconds %= 3600 
+    m = seconds //60 
+    s = seconds % 60   
+    return f"{int(h):02}:{int(m):02}:{int(h):02}"
+
+def calculate_average_time (run_stats):
+    total_seconds = sum(time_to_second(time) for time in run_stats)
+    average_seconds = total_seconds // len(run_stats)
+    return second_to_time(average_seconds)
+
+def main():
+    run_info = get_run_info()
+    run_stats_combined = get_run_stats(run_info)
+    average_second = calculate_average_time(run_stats_combined)
+    print (f'the average running time is {average_second}')
+
+if __name__ == "__main__":
+    main()
+             
+# to note down stuff that I learn from doing this exercise
+              
+
