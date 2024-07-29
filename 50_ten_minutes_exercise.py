@@ -308,3 +308,38 @@ if __name__ == "__main__":
 # to note down stuff that I learn from doing this exercise
               
 
+'''
+Exercise 4: 
+For this exercise, you need to write a function (hex_output) that takes a hex number
+and returns the decimal equivalent. That is, if the user enters 50, you’ll assume
+that it's a hex number (equal to 0x50) and will print the value 80 to the screen. And
+no, you shouldn't convert the number all at once using the int function, although it’s
+permissible to use int one digit at a time.
+
+
+'''
+# 0x1357 -- base 16 
+x = 7 * 16**0
+y = 5 * 16**1
+z = 3 * 16**2
+e = 1 * 16**3  
+print ( x + y + z + e  )
+# the base number will start with 0, then the next digit is  n+1   
+hex(4951)  # output: 0x1357  
+# reserve the number from 4951 to become 1 5 9 4 
+
+# ask for user input 
+# 
+conver_number = input('What number do you want to convert: ')
+print (conver_number)
+
+def hex_output(conver_number):
+    conver_number = input('What number do you want to convert: ')
+    total = 0  
+    for index, one_digit in enumerate(reversed(conver_number)):
+        total += int(one_digit) * 16 ** index 
+    print (total)
+
+hex_output(conver_number)
+
+    

@@ -152,3 +152,174 @@ else:
 alphabet.upper()
 
 
+
+
+'''
+exercise 1: ask for user input nummber 
+ask for user name: 
+=> print the user name with the number of time they input in the system 
+'''
+
+number_print = int(input("how many time you want your name to be printed?; "))
+user_name = input('What is your name?: ')
+for number in range(number_print):
+    print (user_name)
+
+'''
+exercise 2: ask for the user name, print out their name following the tree format, untill the user name is fully printed
+'''
+user_name = input('What is your name?: ')
+name = ''  
+for letter in user_name: 
+    name += letter 
+    print (name)
+    
+# why when I put the variable 'name' inside the for loop, the output only print each letter per row, rather than creating a tree like this solution  
+user_name = input('What is your name?: ')
+for letter in range(len(user_name)):
+    print(user_name[: letter + 1])
+    
+
+'''
+
+exercise: 42 
+ask a users to enter a bunch of nummber until user input <enter> (i.e empty string).backend: do the sum and average, then return the sum and average result
+'''
+
+
+'''while True: 
+    numbers = int(input('tell me a number in your head: '))
+    number_input = []
+    number_input.append(number)    
+    print(number_input)
+    '''
+# the code above generate out the outcome for 4
+'''
+[4]
+[4]
+'''
+
+#while True: 
+#    numbers = int(input('tell me a number in your head: '))
+#    store_number = []
+#    store_number.append(numbers)
+    
+    
+store_number = []
+#numbers = int(input('tell me a number in your head: '))
+#store_number.append(numbers)
+while True:
+    numbers = int(input('tell me a number in your head: '))
+    store_number.append(numbers)
+    total = float(sum(store_number))
+    average = total / len(store_number)
+    print(f'input value= {store_number}')
+    print(f'total input = {total}')
+    print(f'average input = {average:.2f}')    
+    if not numbers: 
+        break 
+
+# get to this point so far, yet the part that Im missing is how to use break, => when user press enter, the output will show the result, instead of it is showing each time like currently I have 
+
+store_number = []
+while True:
+    numbers = int(input('tell me a number in your head: '))
+    if not number: 
+        break 
+    
+store_number.append(numbers)
+total = float(sum(store_number))
+average = total / len(store_number)
+    
+print(f'input value= {store_number}')
+print(f'total input = {total}')
+print(f'average input = {average:.2f}')   
+# why the output does not calculate and return the function?  
+
+# I think the reason is because the system report an error from the code, that's why it stop, and not execute the codeline below 
+'''  
+{
+	"name": "ValueError",
+	"message": "invalid literal for int() with base 10: ''",
+	"stack": "---------------------------------------------------------------------------
+ValueError                                Traceback (most recent call last)
+Cell In[64], line 3
+      1 store_number = []
+      2 while True:
+----> 3     numbers = int(input('tell me a number in your head: '))
+      4     if not number: 
+      5         break 
+
+ValueError: invalid literal for int() with base 10: ''"
+}
+'''
+
+# exercise 51 
+"""
+Pig Latin: 
+- to translate a word from english into Pig Latin
+(1) of the first leter is a vowel -- a,e,i,o or u then add 'way' into the end of the word
+- elephant -> elepahntway
+- octopus -> octopusway 
+- elegant -> elgantway 
+
+(2) if the first letter is *not* a vowel, then move the first letter to the end of the word, and add "ay" 
+- computer -> omputercay 
+- table -> abletay 
+- microphone -> icrophonemay   
+
+(3) ask the user to enter one word in english  - no punctuation, no capital letters  
+(4) and print the translation into Pig Latin  
+
+=> now try the full sentence 
+"""
+
+word = input('Enter a word: ')
+if word[0] in 'aeiou':
+    print (word + 'way')
+else: 
+    print (word[1:] + word[0] + 'ay')
+
+
+sentence = input('Enter a sentence: ')
+list = sentence.split()
+print(sentence)
+print(list)
+new_sentence = []
+for word in list: 
+    if word[0] in 'aeiou':
+        new_word = word + 'way'
+        new_sentence += [new_word]
+    else: 
+        new_word = word[1:] + word[0] + 'ay'
+        new_sentence += [new_word]
+
+new_sentence_list = ' '.join(map(str,new_sentence)) # use map() method 
+
+print(new_sentence)    
+print(new_sentence_list)
+
+# for different method, check out the following link 
+# https://www.geeksforgeeks.org/python-program-to-convert-a-list-to-string/
+
+
+sentence = input('Enter a sentence: ')
+list = sentence.split()
+print(sentence)
+print(list)
+new_sentence = []
+for word in list: 
+    if word[0] in 'aeiou':
+        new_sentence.append(word + 'way')
+    else: 
+        new_sentence.append(word[1:] + word[0] + 'ay')
+    
+print(' '.join(new_sentence))    
+
+# review this code 
+
+
+list = [10, 20, 13, 4]
+list.sort()
+
+list
