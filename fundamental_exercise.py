@@ -474,5 +474,22 @@ while True:
         print (user_name)
         print (user_name2)
 print(phone_book)    
+# the codeline above does not sort the last name in order  
+
+phone_book = []
+while True: 
+    user_name = input('your first and last name is (first name + space + last name)').strip()
+    if not user_name:
+        break
+    if ' ' not in user_name: # damn it, why didnt I think about this one before :) 
+        print('hey follow through instruction')
+#    if user_name[-1] != ' ': # what is the better way to check on this?  
+#        print('hey not correct')
+    first_name, last_name = user_name.split()
+    phone_book.append((last_name, first_name))
+
+for last_name, first_name in sorted(phone_book):
+    print(f'{last_name}, {first_name}')
+
 
 

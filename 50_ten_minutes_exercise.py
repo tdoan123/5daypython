@@ -342,4 +342,74 @@ def hex_output(conver_number):
 
 hex_output(conver_number)
 
-    
+
+# exercise 5 - 6 are pig latin in word and sentence.  
+
+# excercise 7 
+'''
+For this exercise, you'll write a function (called ubbi_dubbi) that takes a single
+word (string) as an argument. It returns a string, the word's translation into Ubbi
+Dubbi. So if the function is called with octopus, the function will return the string
+uboctubopubus. And if the user passes the argument elephant, you'll output
+ubelubephubant.
+'''
+
+def ubbi_dubbi (word):
+    output = []
+    for letter in word:  
+        if letter in 'aeiou':
+            output.append(f'ub{letter}')
+        else: 
+            output.append(letter)
+    return ''.join(output)
+# type(output) ? 
+# type(ubbi_dubbi)?
+ubbi_dubbi('hello world')
+
+'''
+how this function work?
+- assign an argument 
+- create a list 
+- use for function to iterlate each component in the argument 
+    - then check the condition of each component to see if 
+        - has component that match with component in default string if yes: 
+            append (add into the list) the component with 'ub' preface 
+            if no. just add the component in the the list 
+- display the output list in a word format using ''.join() to glue all the character in output without space in between => this turn output from list to string
+  
+'''
+ 
+# what if I write it the other way around?  search for letter not in 'aeiou'? how does it impact the performance  
+
+# exercise 8
+'''
+In this exercise, youll explore this idea by writing a function, strsort, that takes a
+single string as its input and returns a string. The returned string should contain the
+same characters as the input, except that its characters should be sorted in order, from
+the lowest Unicode value to the highest Unicode value. For example, the result of
+invoking strsort('cba') will be the string abc.
+'''
+def strsort (a_string):
+    return ''.join(sorted(a_string))
+
+strsort ('asdfasdf')
+
+word = 'adsfasdvb'
+print (sorted(word))
+# output:  ['a', 'a', 'b', 'd', 'd', 'f', 's', 's', 'v']
+# when I use sorted(list) function, the output return a new list of string or list from the input. 
+# => in order for the output to display properly, need to create a string by using ''join() function  
+
+
+'''
+Consider a few other variations of, and extensions to, this exercise, which also use
+str.split and str.join, as well as sorted:
+ Given the string “Tom Dick Harry,” break it into individual words, and then sort
+those words alphabetically. Once they're sorted, print them with commas (,)
+between the names.
+ Which is the last word, alphabetically, in a text file?
+ Which is the longest word in a text file?
+Note that for the second and third challenges, you may well want to read up on the
+key parameter and the types of values you can pass to it. A good introduction, with
+examples, is here: http://mng.bz/D28E.
+'''
