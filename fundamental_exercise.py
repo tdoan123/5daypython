@@ -492,4 +492,169 @@ for last_name, first_name in sorted(phone_book):
     print(f'{last_name}, {first_name}')
 
 
+# section 7: Dictionaries 
+# 63: intro to dictionaries 
+
+d = {} # emply dict with curly braces 
+d[100] = 10
+d[200] = 20
+d[500] = 30
+len(d)
+ 
+d[100]
+d[200]
+# {100: 10, 200: 20, 500: 30}
+# key:value format 
+d = {100:10, 205:20, 315:30}
+d
+d[4567] = 40
+d
+# add new key and value 
+d[4567] = 99
+d
+# keys in dictionary is unquie. the only changes are the values of the keys  
+# can be use any immutable type
+d = {'a':1, 'b':2, 'c':3}
+d['a']
+# search on used for the keys and has to be exact 
+ 
+# exercise 8: restaurant 
+'''
+create a dict containing a restaurant menu.
+the item will be the dict keys. 
+the prices will be the dict values 
+
+ask the user (customer) repeatly what they want to order  
+
+
+(1) if they give us an empty string, stop asking and give the total bill 
+(2) if they ask for something that 'is' on the menu. say how much it costs and add it to the total - and have them order something else.  
+(3) if they ask for something that is *not* on the menu, then tell them dotnt carry this product, and have them try again. 
+'''
+
+# creat a dictionary of meny and prices 
+# ask for menu function 
+# search for the respons 
+    # if menu is in the dictionary, sum and add up 
+    # if menu is not, tell them you dont have today  
+# generate summary of order and total amount  
+
+menu = {'sandwich': 10, 
+        'coffee': 15,
+        'salad': 8}
+total = 0
+while True:
+     user_input = input('What can i serve you today? ').strip()
+     if not user_input: 
+         break
+     if user_input in menu: 
+        total += menu[user_input]
+        print (f'{user_input} is {menu[user_input]}, total is {total}')
+     if user_input not in menu:
+        print (f'we do not serve {user_input} today')
+print (f'Total is {total}')         
+# hey so happy that I constaintly solving all the exercise by mysele :) 
+# the solution, he was using else if and else: which is different than mine. review to understand the differences and rationale  
+
+# 66: get and set default 
+d
+d['a']
+d['z']
+d.get('a')
+d.get('z', 'no such key')
+# d.get() is equivalent to d[] the difference is it does not return valueerror, rather it allows on option to return value in the event that no such key found 
+
+# I want to add the key value pair 'x:5' but only if 'x' is not currently in d
+# setdefault -- takes a key and value
+# - if the key exits, it return the current value 
+# - if the key does NOT exit, it adds the key value-pair and return the value 
+
+d.setdefault('x',100)
+d.setdefault('y',500)
+d
+
+s = 'abcd'
+for one_item in s: 
+    print (one_item)
+    
+for one_item in d: 
+    print (one_item)
+    
+d.keys()
+
+d.values()
+for one_item in d.values():  
+    print (one_item)
+
+'''
+1
+2
+3
+100
+500
+'''
+
+d.items() # return key value pair in tuples format: 
+d.items()
+
+for one_item in d.items():  
+    print (one_item)
+'''
+('a', 1)
+('b', 2)
+('c', 3)
+('x', 100)
+('y', 500)
+'''    
+
+for key, value in d.items():
+    print (f'{key}={value}')
+'''
+unpack the key and value of the dictionary 
+a=1
+b=2
+c=3
+x=100
+y=500
+'''
+
+# 68: Exercise 9: rainfall
+'''
+ask user two questions? 
+first question: what city? 
+second question: how much rain fell there?  
+mm of rain 
+''' 
+
+rain_dict = {}
+
+while True:  
+    city = input('what city? ').strip()
+    if not city: 
+        break 
+    else: 
+        rain = int(input('how much rain fell there yesterday? ')) 
+        if city in rain_dict: 
+            rain_dict[city] += rain
+        else:   
+            rain_dict.setdefault(city,rain) 
+    print (rain_dict)
+        
+ 
+for city, rain in rain_dict.items():
+    print(f'{city}: {rain}')
+
+# 70: how do dicts work? 
+d = {'a':1, 'b':2, 'c':3} # O(1) - constant time 
+myList = [10, 20, 30] # O(n) -- time is proportional to the length 
+# hash function 
+
+hash('abcd')
+globals()
+
+
+
+
+
+
 
