@@ -413,3 +413,77 @@ Note that for the second and third challenges, you may well want to read up on t
 key parameter and the types of values you can pass to it. A good introduction, with
 examples, is here: http://mng.bz/D28E.
 '''
+
+# exercise 9
+'''
+Write a function, firstlast, that takes a sequence (string, list, or tuple) and returns the first and last elements of that
+sequence, in a two-element sequence of the same type. So firstlast('abc') will
+return the string ac, while firstlast([1,2,3,4]) will return the list [1,4].
+'''
+
+def firstlast (word):
+    resultfirst = word[:1]
+    resultlast = word[-1:]
+    result = word[:1] + word[-1:]
+    print (resultfirst)
+    print (resultlast) 
+    print (result)
+    print (type(word))
+    print (type(result))
+firstlast ('hello') # sequence type string 
+firstlast ([1,2,3,4]) # sequence type list  
+firstlast ((1,2,3,4)) # sequence type tuple  
+'''
+input:  
+    firstlast ({1,2,3,4}) # sequence type set does not return
+
+output: 
+{
+	"name": "TypeError",
+	"message": "'set' object is not subscriptable",
+	"stack": "---------------------------------------------------------------------------
+TypeError                                 Traceback (most recent call last)
+File c:\\Users\\dqthi\\OneDrive\\Coding_Journey\\CodeBreakThrough\\Beginner_Python_Programming_All-in-One_Tutorial_Series\\50_ten_minutes_exercise.py:11
+      9 firstlast ([1,2,3,4]) # sequence type list  
+     10 firstlast ((1,2,3,4)) # sequence type set   
+---> 11 firstlast ({1,2,3,4})
+
+File c:\\Users\\dqthi\\OneDrive\\Coding_Journey\\CodeBreakThrough\\Beginner_Python_Programming_All-in-One_Tutorial_Series\\50_ten_minutes_exercise.py:2
+      1 def firstlast (word):
+----> 2     resultfirst = word[:1]
+      3     resultlast = word[-1:]
+      4     result = word[:1] + word[-1:]
+
+TypeError: 'set' object is not subscriptable"
+}
+'''
+ 
+# explain why having more than argurment inputted does not work  
+'''
+input:  
+def firstlast (word):
+    pass
+firstlast ('hello','morning','afternoon')
+firstlast ([1,2,3,4], [2, 3, 4, 5])
+
+output:  
+{
+	"name": "TypeError",
+	"message": "firstlast() takes 1 positional argument but 3 were given",
+	"stack": "---------------------------------------------------------------------------
+TypeError                                 Traceback (most recent call last)
+File c:\\Users\\dqthi\\OneDrive\\Coding_Journey\\CodeBreakThrough\\Beginner_Python_Programming_All-in-One_Tutorial_Series\\50_ten_minutes_exercise.py:10
+      8 firstlast ('hello')
+      9 firstlast ([1,2,3,4])
+---> 10 firstlast ('hello','morning','afternoon')
+     11 firstlast ([1,2,3,4], [2, 3, 4, 5])
+
+TypeError: firstlast() takes 1 positional argument but 3 were given"
+}
+
+explaination: 
+- in the def line, the default setting for function only alows the function to accept 1 argument, which is "word"  
+=> when we call the function with more than 1 argument, the function gets confuse as it does not know how to do with the n+1 argument. Therefore return an error as above.  
+'''    
+
+

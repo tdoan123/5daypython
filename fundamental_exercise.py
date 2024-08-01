@@ -652,9 +652,35 @@ myList = [10, 20, 30] # O(n) -- time is proportional to the length
 hash('abcd')
 globals()
 
+# Section 8: 
+# 71 Intro to sets 
+
+# set is a list, that have all the values are unquie and quickly searchable  
+# or: a dictionary only week key, not with value 
+
+s = set() 
+s.add(20)
+s.add(30)
+s.add(40)
+# set make sure uniqueness, and key only  
+s = {10, 20, 30, 40}
+s
+print(s)  
+# if I want to create an empty set  => s = set()
 
 
 
+s = {10, 20, 30, 40 }
+s.add(50)
+s.add(50.0)
+s.update (20, 30, 40)
+s.update([20, 30 , 40, 50 , 60])
 
+s.remove(30)
 
-
+# 74 | Exercise 10: Dollar store  
+# dollar store: have a lot of item, but all have the same price 
+# ask the user, again and again, what they awant to buy.  
+# if they give an empty string, exits and give the total bill 
+# if they give a string taht is in our inventory,  then add $1 to the total 
+# if they give a string that isn't in our inventory, scold them  
