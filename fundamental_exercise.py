@@ -684,3 +684,88 @@ s.remove(30)
 # if they give an empty string, exits and give the total bill 
 # if they give a string taht is in our inventory,  then add $1 to the total 
 # if they give a string that isn't in our inventory, scold them  
+
+
+### to come back on this exercise, skip this for now as the focus is to get through the remaining sections within today.  
+
+# 76 | Set Operations 
+s1 = {10, 20, 30, 40}
+s2 = {30, 40, 50, 60}
+
+s1 - s2 # show me what is in s1 but *NOT* in s2
+# {50, 60}
+s2 - s1 # show me what is in s2 but *NOT* in s1 
+# {50, 60}
+
+# what elements is in either s1 or s2, but not in both?  
+s1.symmetric_difference(s2) 
+# symmetric_difference is basically ... xor 
+s1 ^ s2 # uses the bitwise ^ operator 
+
+s3 = {20, 30}
+# is s3 a subset of s1? 
+s3 < s1 
+# is s2 a subset of s1?
+s2 < s1 
+
+# union means to combine them 
+s1 | s2 # return a set with all elements from both! 
+# the result will definately not containt duplicate values because as a set itself, it doesnt have duplicate values 
+
+s1 & s2 # return a set with elements in both 
+
+# 71 | Exercise 11 | Spelling bee 
+'''
+define a word that contains 7 different letters 
+(or it can just be a collection of 7 different letters )
+
+- ask the user to enter a string 
+- if the string contains only those letter from the 7, say 'yay' 
+- if not, then say 'boo' 
+'''
+
+
+default_str = {'a','b','c','d','e','f','g'}
+letter_set = set()
+
+while True:
+    user_input = input('enter your word: ').strip()
+    if not user_input: 
+        break 
+    for letter in user_input: 
+        letter_set.add(letter)
+print (letter_set)
+if letter_set == default_str: 
+    print ('Yay')
+else: 
+    print ('Boo')
+# why '<' does not work? is it because letter_set contain equal the element of default_str? 
+# try this by having letter_set has less elements than default_str 
+# yes, my thought was correct, when i tried letter_set with less elments, the operation works 
+
+
+
+# split the word and put them into a set 
+
+# match the letter into the define set 
+# if the elements in the input is a subset or equal to the define set, you are good 
+# if False => return 'boo' 
+
+# below is the solution 
+letters = set('abcdefg')
+while True:
+    user_input = input('enter your word: ').strip()
+    if not user_input:
+        break
+    elif set(user_input) <= letters: 
+        print (f'Yes, {user_input} only uses our letters') 
+    else: 
+        print (f'No, {user_input} uses other letters') 
+
+'''
+note from reflecting the solution: 
+- miss understood the question, i though the user input has to have 7 characters.  
+- my approach is manually define the elements of the set, while the solution use the default function, which is smart.  
+- the same thing for the user input, i converted the user input into a list of character, then put them in set. Didnot know that I create a set from a list. Thought I could do it. 
+
+'''
