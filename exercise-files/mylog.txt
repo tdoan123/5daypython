@@ -1,0 +1,7 @@
+first log
+second log
+third log
+fourth log
+fifth log
+sixth log
+another line!
