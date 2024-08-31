@@ -18,19 +18,13 @@
 
 import csv
 with open(r"C:\Users\dqthi\Downloads\exercise-files\mini-access-log.txt") as file:
-    reader = csv.reader(file,delimiter=' ', quotechar='"', skipinitialspace=True) 
-    ip_count = {}
-    for row in reader: 
-        if row[0] in ip_count:
-            ip_count[row[0]] += 1
-        else:
-            ip_count[row[0]] = 1
-
-    # print the dictionary
-    # for ip in ip_count:
-    #     print(ip, ip_count[ip]) # ip_count[ip] is the value of the dictionary ip_count with key is ip
+    reader = csv.reader(file, delimiter=' ', quotechar='"', skipinitialspace=True)
     
+    first_row = next(reader)  # Get the first row
+    print(first_row[3])    
+    
+    for index, word in enumerate(first_row):
+        print(f"Word {index+1}: {word}")
 
-    a = sorted(ip_count.items(), key=lambda x: x[1], reverse=True)
-    for ip, count in a:
-        print(ip, count)
+
+]
