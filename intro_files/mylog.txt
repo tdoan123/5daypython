@@ -4,4 +4,15 @@ third log
 fourth log
 fifth log
 sixth log
-another line!
+another line!first log
+second log
+third log
+1 log
+2 log
+3 log
+1 log
+2 log
+2 log3 log
+4 log5testing using print to write
+testing using print to write
+
