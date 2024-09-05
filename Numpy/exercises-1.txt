@@ -1,0 +1,9 @@
+(1) Create a NumPy array with the integers from your birthdate (year,
+    month, and day)
+
+(2) Retrieve the year.
+
+(3) Replace the year with the current year.
+
+(4) Create a NumPy array containing every 3rd number from 567 to
+    890. What is the 8th number in this array?  What is the 15th?
