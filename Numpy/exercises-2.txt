@@ -1,0 +1,15 @@
+(1) Create an array of 10 random integers, from 0-100.
+
+(2) Find the mean and standard deviation of these numbers.  
+
+(3) Create another array of 10 random integers, from 0-100.
+
+(4) Create a new array whose elements are the average of those from
+    each of the previous ones.  
+
+(5) Create an array of 10 random floats, from 0-100.
+
+(6) We would expect the mean to be approaximately 50.  Is it?  What's
+    the standard deviation?
+
+(7) What are the min and max values?
