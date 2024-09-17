@@ -1,0 +1,23 @@
+(1) Read "college.csv" into a data frame. This is a subset of data about American universities from the year 2018.  The columns are:
+
+    - city
+    - state abbreviation
+    - SAT average score
+    - Institution name
+    - Admission rate
+    - Average number of months needed to complete a degree
+    - Tuition fee (in US dollars) for in-state students
+
+(2) Set the index to be based on the state abbreviation. What was the
+    average SAT score in Massachusetts (MA)?  What was the average
+    acceptance rate in Illinois?
+
+(3) Now use a multi-index based on state and city name. How many schools
+    are based in a city named "Cambridge" in the US? What's the average
+    SAT score for schools in cities named "Cambridge"?
+
+(4) Create a series for all schools in the states of California (CA),
+    Illinois (IL), and New York (NY), with a multi-index of state and
+    city, with a value of admission rate. Which school in Illinois has
+    the highest admission rate?  Which school in California has the
+    lowest admission rate?
